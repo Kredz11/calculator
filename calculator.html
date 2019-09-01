@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Calculator</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background: rgb(55, 76, 97)
+            }
+            .keys{
+                position: absolute;
+                top: 55%;
+                left: 55%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            .display{
+                position: relative;
+                height: 200px;
+            }
+            .button{
+                width: 40px;
+                height: 65px;
+                font-size: 15px;
+                cursor: pointer;
+                font-family: 'Franklin Gothic Medium';
+                color: brown;
+                background-color:rgb(42, 37, 77);
+                margin: 3px;
+                border: none;
+
+            }
+            .delete{
+                margin: 2px;
+                border: none;
+                cursor: pointer;
+
+            }
+            .textdisplay{
+                width: 210px;
+                margin: 2px;
+                font-size: 30;
+                padding: 5;
+                cursor: pointer;
+                color: black;
+            }
+            .equal{
+                font-size: 15px;
+                cursor: pointer;
+                font-family: 'Franklin Gothic Medium';
+                color: brown;
+                background-color:rgb(42, 37, 77);
+                padding: 21px;
+
+            }
+        </style>
+        <script>
+            function insert(number){
+                document.form.textdisplay.value = document.form.textdisplay+number
+            }
+            function equal(exp){
+                var exp= document.form.textdisplay.value = eval(exp)
+            }
+            function clean() {
+                document.form.textdisplay.value = ""
+    
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div class="display"></div>
+        <div class="keys">
+            <form name="form">
+                <input class="textdisplay" name="textdisplay">
+            </form>
+            <table >
+                <tr>
+                    <td> <input class="button" type="button" value="1" onclick="insert(1)"></td>
+                    <td> <input class="button" type="button" value="2" onclick="insert(2)"></td>
+                    <td> <input class="button" type="button" value="CE" onclick="clean()"></td>
+                    <td> <input class="delete" type="button" value="C" onclick="back()"></td>
+                </tr>
+                <tr>
+                    <td> <input class="button" type="button" value="3" onclick="insert(3)"></td>
+                    <td> <input class="button" type="button" value="4" onclick="insert(4)"</td>
+                    <td> <input class="button" type="button" value="5" onclick="insert(5)"></td>
+                    <td> <input class="button" type="button" value="+" onclick="insert('*')"></td>
+                </tr>
+                <tr>
+                    <td> <input class="button" type="button" value="6" onclick="insert(6)"></td>
+                    <td> <input class="button" type="button" value="7" onclick="insert(7)"></td>
+                    <td> <input class="button" type="button" value="8" onclick="insert(8)"></td>
+                    <td> <input class="button" type="button" value="9" onclick="insert(9)"></td>
+                </tr>
+                <tr>
+                    <td> <input class="button" type="button" value="0" onclick="insert (0)"></td>
+                    <td> <input class="button" type="button" value="." onclick="insert('.')"></td>
+                    <td> <input class="button" type="button" value="/" onclick="insert('/')"></td>
+                    <td> <input class="button" type="button" value="-" onclick="insert('-')"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <input class="equal" style="width: 100px" type="button" value="=" onclick="equal()"/td>
+                    <td> <input class="button" type="button" value="+" onclick="insert('+')"></td>
+                    <td> <input class="button" type="button" value="%" onclick="insert('%')"></td>
+                </tr>
+            </table>
+        </div>
+
+
+
+    </body>
+    
+
+
+
+
+
+</html>
